@@ -1,0 +1,5 @@
+{
+  "token": "Your Bot Token",
+  "DataBaseURL": "Your MongoDb URL",
+  "OwnerId": "Your Discord Id"
+}
