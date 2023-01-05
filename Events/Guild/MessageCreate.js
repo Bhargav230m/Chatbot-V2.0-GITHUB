@@ -19,14 +19,13 @@ module.exports = {
       )
         return;
       try {
-        const channel = await message.guild.channels.cache.get(data.Channel);
         channel.sendTyping();
         const res = await axios.get(
           `http://api.brainshop.ai/get?bid=170682&key=B1l2GDjlTJgjt5W2&uid=1&msg=${encodeURIComponent(
             message.content
           )}`
         );
-        channel.send({ content: `<@${message.member.id}> ${res.data.cnt}` });
+        message.reply({ content: `<@${message.member.id}> ${res.data.cnt}` });
       } catch (err) {
         const crash = await message.guild.channels.cache.get(data.CrashReport);
         const embed = new EmbedBuilder()
